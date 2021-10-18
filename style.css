@@ -1,0 +1,71 @@
+:root {
+    font-size: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    font-family: 'Mukta', sans-serif;    
+}
+
+body {
+    background-color: #eee;
+}
+
+header .container {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #2b3d41;
+    color: #fff;
+    box-shadow: 0px 2px 0.5rem rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+main div, main canvas {
+    margin-bottom: 1rem;
+}
+
+main .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+main .contadores {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 0.25rem;
+}
+
+.contadores p {
+    margin: 0 1rem;
+}
+
+main canvas {
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+    width: auto;
+    height: 60vh;
+}
+
+
+@media(max-width: 992px) {
+    #canvas {
+        width: auto;
+        height: 70vh;
+    }
+}
+
+@media(max-width: 576px) {
+    #canvas {
+        height: 80vh;
+        width: auto;
+    }
+}
+
+
