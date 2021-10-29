@@ -6,11 +6,12 @@ let direcao = "d"; // (d)ireita, (e)squerda, (c)ima, (b)aixo
 let intervalo = 100
 let jogo;
 
-let partidasJogadas = 0;
 let pontuacao = cobra.length - 2;
 let recorde = 0;
 
 const htmlPontuacao = document.getElementById("pontos");
+const htmlRecorde = document.getElementById("recorde");
+const botaoPlay = document.getElementById("play");
 
 /*
 PALETA DE CORES
@@ -20,10 +21,15 @@ FUNDO: 2b3d41
 */
 
 // Criação das coordenadas iniciais da cobra
-for (let i=0; i<2; i++) {
-    cobra[i] = {
-        x: box - i*box,
-        y: 0,
+function inicializarCobra() {
+    direcao = "d";
+    cobra = [];
+
+    for (let i=0; i<2; i++) {
+        cobra[i] = {
+            x: box - i*box,
+            y: 0,
+        }
     }
 }
 
@@ -52,15 +58,23 @@ function desenharComida() {
 }
 
 function iniciarJogo() {
-    // Atualiza os mostradores html
-    htmlPontuacao.innerHTML = cobra.length - 2;
-    //htmlMensagem.style.display = "none";
+    // Atualiza o mostrador html de pontuacao
+    pontuacao = cobra.length - 2;
+    htmlPontuacao.innerHTML = pontuacao;
+
+    // Atualiza mostrador html de recorde
+    if (pontuacao > recorde) {
+        recorde = pontuacao;
+        htmlRecorde.innerHTML = recorde;
+    }
 
     // Verifica colisão da cobra nela mesma
     for (let i=1; i<cobra.length; i++) {
         if (cobra[0].x == cobra[i].x && cobra[0].y == cobra[i].y) {
             clearInterval(jogo);
             canvas.style.boxShadow = "0px 0px 0.5rem rgba(150, 0, 0, 0.5)";
+
+            botaoPlay.style.display = 'inline';
         }
     }
 
@@ -125,5 +139,18 @@ function atualizar(event) {
     }
 }
 
-jogo = setInterval(iniciarJogo, intervalo);
+
+function play() {
+    inicializarCobra();
+    canvas.style.boxShadow = "0 0 0.5rem rgba(0, 0, 0, 0.25)";
+
+    botaoPlay.style.display = 'none';
+
+    jogo = setInterval(iniciarJogo, intervalo);
+}
+
+
 document.addEventListener("keydown", atualizar);
+botaoPlay.addEventListener("click", play);
+
+play();
