@@ -14,6 +14,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
 
+    <!-- Font awesome -->
+    <script src="https://kit.fontawesome.com/04655e0cf2.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,8 +29,10 @@
         <div class="container">
             <div class="contadores">
                 <p>Pontuação: <span id="pontos">0</span></p>
+                <p>Recorde: <span id="recorde">0</span></p>
             </div>
             <canvas id="canvas" width="512px" height="512px"></canvas>
+            <button id="play"><i class="fas fa-play"></i></button>
         </div>
     </main>
     <script defer src="script.js"></script>
