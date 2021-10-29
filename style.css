@@ -68,4 +68,17 @@ main canvas {
     }
 }
 
+button {
+    margin-left: 0.5rem;
+    outline: none;
+    padding: 0.3rem 0.6rem;
+    border: none;
+    background: #06bee1;
+    color: white;
+    border-radius: 0.2rem;
+    display: none;
+}
 
+button:hover {
+    background: #ef8354;
+}
