@@ -1,4 +1,4 @@
-# Jogo da Cobrinha (Snake) Javascript
+# Jogo da Cobrinha :snake:
 Jogo da cobrinha (snake) desenvolvido em javascript com o propósito de praticar minhas habilidades.
 
 Você consegue jogar tanto usando as setas quanto usando as teclas WASD.
